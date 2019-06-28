@@ -1,0 +1,23 @@
+public class Cell1 <T>{
+    // Klassenattribut, aus dem die IDs berechnet werden
+    private static int count = 0;
+    private final int id;
+    private final T value;
+
+    public Cell1(T value) {
+        this.value = value;
+        id = count++;
+    }
+
+    public static int getCount() {
+        return count;
+    }
+
+    public T getValue() {
+        return value;
+    }
+
+    public int getID() {
+        return id;
+    }
+}
