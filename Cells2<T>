@@ -1,0 +1,34 @@
+public class Cells2<T> {
+    // Klassenattribut, aus dem die IDs berechnet werden
+    private static int count = 0;
+    private final int id;
+    private final T value;
+    private static LinkedList<T> values = new LinkedList<T>();
+
+    public Cell2(T value) {
+    this.value = value;
+    id = nextId();
+    values.add(value);
+    }
+
+    private static int nextId() {
+    }
+
+    public static int getCount() {
+    }
+
+    public int getID() {
+    }
+
+    public T getValue() {
+    }
+
+    public static List<T> getValues() {
+        return values;
+    }
+}
+/*Der Compiler moniert aber die neue Attributdeklaration für values ebenso
+wie die neue Methodendeklaration für getValues. Da beide Komponenten
+statisch sind, dürfen sie den Typparameter T nicht verwenden. Dieser wird ja
+erst bei der Instanziierung der Klasse Cell2 für jede Instanz einzeln festgelegt,
+statische Komponenten einer Klasse sind aber unabhängig von Instanzen.*/
