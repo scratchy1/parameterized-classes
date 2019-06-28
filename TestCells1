@@ -1,0 +1,16 @@
+public class TestCell1 {
+
+    // Die main-Methode generiert zwei Zellen mit verschiedenen
+    // Typparametern fuer ihre Werte und gibt deren IDs (0 und 1)
+    // sowie den Wert des Zaehler count (2) aus.
+    public static void main(String[] args) {
+        Cell1<String> a = new Cell1<String>("one");
+        Cell1<Person> b = new Cell1<Person>(new Person("Daisy", "Duck"));
+        System.out.println(a.getID());
+        System.out.println(b.getID());
+        System.out.println(Cell1.getCount());
+        /*System.out.println(Cell1<Person>.getCount()); würde
+        zu einem Übersetzungsfehler führen, da dem Klassennamen beim Aufruf
+        kein Typparameter folgen darf.*/
+    }
+}
